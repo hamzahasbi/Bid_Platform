@@ -1,1 +1,1 @@
-# Bid plateform
+# Bid platform
