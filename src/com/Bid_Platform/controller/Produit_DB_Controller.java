@@ -58,21 +58,9 @@ public class Produit_DB_Controller extends HttpServlet {
 		
 		m.getTransaction().begin();
 		m.persist(p);
-		m.getTransaction().commit();
-		
-		m.getTransaction().begin();
 		m.persist(a);
-		m.getTransaction().commit();
-		
-		m.getTransaction().begin();
 		m.persist(ow);
-		m.getTransaction().commit();
-		
-		m.getTransaction().begin();
 		m.persist(ox);
-		m.getTransaction().commit();
-		
-		m.getTransaction().begin();
 		m.persist(candidate);
 		m.getTransaction().commit();
 		
