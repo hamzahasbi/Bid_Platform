@@ -1,6 +1,7 @@
 package com.Bid_Platform.controller;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -11,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.Bid_Platform.model.Candidate;
+import com.Bid_Platform.model.Data_base_utils;
 import com.Bid_Platform.model.Owner;
 import com.Bid_Platform.model.Produit;
 
@@ -41,30 +43,36 @@ public class Produit_DB_Controller extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String s="Moto,Vehicule";
-		Produit p=new Produit("AA","Z800","zouine","02/10/2017","03/11/2017","../mamak.pnj","Deuxieme main",s,
-				"hamza",50000);
 		
-		Produit a=new Produit("BB","Z800","zouine","02/10/2017","03/11/2017","../mamak.pnj","Deuxieme main",s,
-				"hamza",50000);
 		
-		Owner ow=new Owner("hamza@gmail.com","hasbi","hamza","0669940695","Marocain","123",22,"wakha","AA");
-		Owner ox=new Owner("mehdi@gmail.com","hasbi","mehdi","0669940695","Marocain","123",22,"wakha","AA");
+		Produit p=new Produit("AtA","Z800","zojuine","02/10/2017","03/11/2017","../ok.pnj","Deuxieme main",s,
+				"hamza",50000,1);
 		
-		Candidate candidate=new Candidate("kk@gmail.com","hasbi","mehdi","0669940695","Marocain","123",22,"wakha","AA");
+		Produit pc=new Produit("AtlA","Z800","z'ouine","02/10/2017","03/11/2017","../ok2.pnj","Deuxieme main",s,
+				"hamza",50000,1);
+		
+		Owner ow=new Owner("hamza1@gmail.com","hasbi","hamza","0669940695","Marocain","123",22,"wakha","AA");
+		Owner ox=new Owner("mehdi5@gmail.com","hasbi","mehdi","0669940695","Marocain","123",22,"wakha","AA");
+		
+		Candidate candidate=new Candidate("klk@gmail.com","hasbi","mehdi","0669940695","Marocain","123",22,"wakha","AA");
 		//Person person=new Person("hamza@gmail.com","hasbi","hamza","0669940695","Marocain","123",22);
 		EntityManagerFactory em=Persistence.createEntityManagerFactory("maxDars");
 		EntityManager m=em.createEntityManager();
 		
 		
-		m.getTransaction().begin();
+		/*m.getTransaction().begin();
 		m.persist(p);
-		m.persist(a);
+		m.persist(pc);
 		m.persist(ow);
 		m.persist(ox);
 		m.persist(candidate);
-		m.getTransaction().commit();
+		m.getTransaction().commit();*/
+		Data_base_utils dbu=new Data_base_utils(m);
+		List<Produit>pp=dbu.products_by_name("Z800");
+		for(int i=0;i<pp.size();i++){
+			response.getWriter().append(pp.get(i).toString()+"<br/>");
+		}
 		
-		response.getWriter().append("Service<br/>");
 	}
 
 	/**
