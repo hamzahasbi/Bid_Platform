@@ -15,10 +15,10 @@ import javax.persistence.InheritanceType;
 public class Person {
 	
 	@Id
-	private String email;
+	protected String email;
 	@Column
-	private String nom,prenom,num_tel,nationnalite,mdp;
-	private int age;
+	protected String nom,prenom,num_tel,nationnalite,mdp;
+	protected int age;
 	
 	public Person() {
 		
@@ -74,6 +74,11 @@ public class Person {
 	}
 	public void setAge(int age) {
 		this.age = age;
+	}
+	@Override
+	public String toString() {
+		return "Person [email=" + email + ", nom=" + nom + ", prenom=" + prenom + ", num_tel=" + num_tel
+				+ ", nationnalite=" + nationnalite + ", mdp=" + mdp + ", age=" + age + "]";
 	}
 
 

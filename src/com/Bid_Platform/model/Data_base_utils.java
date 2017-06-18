@@ -69,5 +69,7 @@ public class Data_base_utils {
 		return (List<Produit>) 
 				m.createNamedQuery("products_by_cat_end_date").setParameter("type", type).setParameter("name", name).getResultList();
 	}
-	
+	public List<Owner> owners(){
+		return (List<Owner>) m.createNamedQuery("Owners").getResultList();
+	}
 }

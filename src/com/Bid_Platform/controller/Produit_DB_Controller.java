@@ -68,7 +68,7 @@ public class Produit_DB_Controller extends HttpServlet {
 		m.persist(candidate);
 		m.getTransaction().commit();*/
 		Data_base_utils dbu=new Data_base_utils(m);
-		List<Produit>pp=dbu.products_by_name("Z800");
+		List<Owner>pp=dbu.owners();
 		for(int i=0;i<pp.size();i++){
 			response.getWriter().append(pp.get(i).toString()+"<br/>");
 		}
