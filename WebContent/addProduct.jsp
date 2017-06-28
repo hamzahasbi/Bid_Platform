@@ -163,10 +163,10 @@ License: You must have a valid license purchased only from themeforest (the abov
                                 <div class="col-md-4">
                                     <select class="form-control" name="select">
                                         <option value="">Select...</option>
-                                        <option value="Category 1">Category 1</option>
-                                        <option value="Category 2">Category 2</option>
-                                        <option value="Category 3">Category 5</option>
-                                        <option value="Category 4">Category 4</option>
+                                        <option value="Antiques">Antiques</option>
+                                        <option value="Jewelry">Jewelry</option>
+                                        <option value="Furniture">Furniture</option>
+                                        <option value="Electronics">Electronics</option>
                                     </select>
                                 </div>
                             </div>

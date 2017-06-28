@@ -161,7 +161,7 @@ License: You must have a valid license purchased only from themeforest (the abov
                       <ul class="list-unstyled">
                         <li><i class="fa fa-dot-circle-o"></i> ID  &nbsp &nbsp <i class="fa fa-chevron-right"></i> &nbsp &nbsp <%= lpp.get(0).getSerie() %></li>
                         <li><i class="fa fa-th-list"></i> Category  &nbsp &nbsp  <i class="fa fa-chevron-right"></i> &nbsp &nbsp <%= lpp.get(0).getCategorie() %></li>
-                        <li><i class="fa fa-usd"></i> Current Price &nbsp &nbsp  <i class="fa fa-chevron-right"></i> &nbsp &nbsp <%= lpp.get(0).getPrix() %> </li>
+                        <li><i class="fa fa-usd"></i> Current Price &nbsp &nbsp  <i class="fa fa-chevron-right"></i> &nbsp &nbsp <%= lpp.get(0).getPrix() %> Euro </li>
                         <li><i class="fa fa-user"></i> Owner's email &nbsp &nbsp  <i class="fa fa-chevron-right"></i> <%= lpp.get(0).getOwner().getEmail() %></li>
                       </ul>
                     </div>
