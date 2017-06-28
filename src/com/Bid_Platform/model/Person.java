@@ -7,12 +7,16 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 
 @Entity
-@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name="Role")
-@DiscriminatorValue("None")
-public class Person {
+@Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
+//@DiscriminatorColumn(name="Role")
+//@DiscriminatorValue("USER")
+
+
+public abstract class Person {
 	
 	@Id
 	protected String email;
@@ -82,7 +86,7 @@ public class Person {
 	}
 
 
-	
+	public abstract String is_class();
 	
 
 }

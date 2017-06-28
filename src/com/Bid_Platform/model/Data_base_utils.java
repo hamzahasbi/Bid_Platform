@@ -3,25 +3,29 @@ package com.Bid_Platform.model;
 import java.util.*;
 
 import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 
 
 public class Data_base_utils {
-	//private EntityManagerFactory em;
+	
+	final  EntityManagerFactory em=Persistence.createEntityManagerFactory("maxDars");
 	private EntityManager m;
 	
-	
-	
-	public Data_base_utils(EntityManager m) {
+
+	public Data_base_utils() {
 		super();
-		//this.em = em;
-		this.m = m;
+		
+		this.m = em.createEntityManager();
 	}
-	/*public EntityManagerFactory getEm() {
-		return em;
+	
+	public void  begin() {
+		this.getM().getTransaction().begin();
+		
 	}
-	public void setEm(EntityManagerFactory em) {
-		this.em = em;
-	}*/
+	public void  commit() {
+		this.getM().getTransaction().commit();
+	}
 	public EntityManager getM() {
 		return m;
 	}
@@ -69,7 +73,18 @@ public class Data_base_utils {
 		return (List<Produit>) 
 				m.createNamedQuery("products_by_cat_end_date").setParameter("type", type).setParameter("name", name).getResultList();
 	}
-	public List<Owner> owners(){
-		return (List<Owner>) m.createNamedQuery("Owners").getResultList();
+	public List<Produit> owners(String a){
+		return (List<Produit>) m.createNamedQuery("products_by_owner").setParameter("mail", a).getResultList();
+	}
+	public List<Produit> candidates(String a){
+		return (List<Produit>) m.createNamedQuery("products_by_candidate").setParameter("mail", a).getResultList();
+	}
+	
+	public List<Person> verif_login(String mail,String psswd) {
+		List<Person> res=new ArrayList<Person>();
+		res.addAll( (List<Person>) m.createNamedQuery("verif_owner").setParameter("mail", mail).setParameter("psswd", psswd).getResultList());
+		res.addAll( (List<Person>) m.createNamedQuery("verif_expert").setParameter("mail", mail).setParameter("psswd", psswd).getResultList());
+		res.addAll( (List<Person>) m.createNamedQuery("verif_cand").setParameter("mail", mail).setParameter("psswd", psswd).getResultList());
+		return res;
 	}
 }

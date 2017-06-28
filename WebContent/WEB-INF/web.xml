@@ -19,4 +19,34 @@
     <servlet-name>Produit_DB_Controller</servlet-name>
     <url-pattern>/test</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>RegisterControl</display-name>
+    <servlet-name>RegisterControl</servlet-name>
+    <servlet-class>com.Bid_Platform.controller.RegisterControl</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RegisterControl</servlet-name>
+    <url-pattern>/RegisterControl</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ProduitControl</display-name>
+    <servlet-name>ProduitControl</servlet-name>
+    <servlet-class>com.Bid_Platform.controller.ProduitControl</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProduitControl</servlet-name>
+    <url-pattern>/ProduitControl</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AddProduct</display-name>
+    <servlet-name>AddProduct</servlet-name>
+    <servlet-class>com.Bid_Platform.controller.AddProduct</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddProduct</servlet-name>
+    <url-pattern>/AddProduct</url-pattern>
+  </servlet-mapping>
 </web-app>
